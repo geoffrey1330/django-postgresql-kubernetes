@@ -23,13 +23,12 @@ spec:
         image: geoffrey13/django-postgresql-kubernetes
         
         imagePullPolicy: IfNotPresent
-        command: ["python","./manage.py", "runserver", "0.0.0.0:8010"]
-        # readinessProbe:                                                                     
-        #     exec:                                                                             
-        #       command: ["python", "manage.py", "migrate", "--check"]                          
-        #     initialDelaySeconds: 15                                                           
-        #     periodSeconds: 5
-        #     timeoutSeconds: 5
+        command: ["/bin/sh","-c"]
+        #["python","./manage.py", "runserver", "0.0.0.0:8010"]
+        args:
+          - python ./manage.py makemigrations;
+            python ./manage.py runserver 0.0.0.0:8010;
+            
         ports:
         - containerPort: 8010
         env:
@@ -54,14 +53,6 @@ spec:
               name: app-variables
               key: DB_HOST
 
-    #     volumeMounts:
-    #        - name: postgres-volume-mount
-    #          mountPath: /var/lib/busybox
-
-    # volumes:
-    #   - name: postgres-volume-mount
-    #     persistentVolumeClaim:
-    #       claimName: postgres-pvc
 ---
 ###########################
 # Cluster IP Service
