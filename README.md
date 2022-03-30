@@ -24,9 +24,9 @@ Django-app deployment in kubernetes
 ```docker
 docker-compose up
 ```
-<p>The app starts at port number 8020</p>
+<p>The app starts at port number 8010</p>
 
-http://localhost:8020
+http://localhost:8010
 
 ## Use Kubernetes to deploy enviornmental variables used by web-app
 ```kubernetes
@@ -48,11 +48,11 @@ kubectl get service
 ```
 ## Use Kubernetes to create deployment and service resources for django app
 ```kubernetes
-kubectl apply -f ./kubernetes/django/component_postgre.yml
+kubectl apply -f ./kubernetes/django/component_django.yml
 ```
 ## Running the app using an external ip address
 ```kubernetes
-minikube get service django-rest-service --url
+minikube get service django-service --url
 ```
 ## Running the app using ingress
 <p>start the ingress controller</p>
