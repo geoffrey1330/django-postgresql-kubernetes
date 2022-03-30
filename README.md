@@ -35,7 +35,7 @@ kubectl create -f ./kubernetes/config_map.yml
 ```
 ## Use Kubernetes to create persistan-volume, persistant-volume-claim deployment and service resources for database
 ```kubernetes
-kubectl apply -f ./kubernetes/postgre/component_postgre.yml
+kubectl apply -f ./kubernetes/Postgres/component_postgres.yml
 ```
 
 ## To check the status of pods:
@@ -52,7 +52,7 @@ kubectl apply -f ./kubernetes/django/component_django.yml
 ```
 ## Running the app using an external ip address
 ```kubernetes
-minikube get service django-service --url
+minikube service --url django-service
 ```
 ## Running the app using ingress
 <p>start the ingress controller</p>
