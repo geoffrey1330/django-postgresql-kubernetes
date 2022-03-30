@@ -24,12 +24,12 @@ spec:
         
         imagePullPolicy: IfNotPresent
         command: ["python","./manage.py", "runserver", "0.0.0.0:8010"]
-        readinessProbe:                                                                     
-            exec:                                                                             
-              command: ["python", "manage.py", "migrate", "--check"]                          
-            initialDelaySeconds: 15                                                           
-            periodSeconds: 5
-            timeoutSeconds: 5
+        # readinessProbe:                                                                     
+        #     exec:                                                                             
+        #       command: ["python", "manage.py", "migrate", "--check"]                          
+        #     initialDelaySeconds: 15                                                           
+        #     periodSeconds: 5
+        #     timeoutSeconds: 5
         ports:
         - containerPort: 8010
         env:
