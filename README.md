@@ -31,7 +31,7 @@ http://localhost:8010
 ## Use Kubernetes to deploy enviornmental variables used by web-app
 ```kubernetes
 kubectl apply -f ./kubernetes/secret.yml
-kubectl create -f ./kubernetes/config_map.yml
+kubectl apply -f ./kubernetes/config_map.yml
 ```
 ## Use Kubernetes to create persistan-volume, persistant-volume-claim deployment and service resources for database
 ```kubernetes
