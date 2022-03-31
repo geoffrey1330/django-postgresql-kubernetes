@@ -56,9 +56,9 @@ minikube service --url django-service
 ```
 ## If you are running the app on remote server you can port forward to access app
 ```
-sudo -E kubectl port-forward --address 0.0.0.0 service/django-service 8000:8010
+sudo -E kubectl port-forward --address 0.0.0.0 service/django-service 8010
 ```
-- To access app run server_ip:8000 on a browser
+- To access app run server_ip:8010 on a browser
 ## Running the app using ingress
 <p>start the ingress controller</p>
 
